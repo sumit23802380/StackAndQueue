@@ -19,6 +19,22 @@ public class Stack <T extends Comparable<T>>{
     public void push(T data){
         linkedList.addToHead(data);
     }
+    public T peek(){
+        if(linkedList.size() == 0){
+            System.out.println("Stack is empty");
+            return null;
+        }
+        return linkedList.head.data;
+    }
+    public T pop(){
+        if(linkedList.size() == 0){
+            System.out.println("Stack is empty");
+            return null;
+        }
+        T topElement = linkedList.head.data;
+        linkedList.pop();
+        return topElement;
+    }
     /*
      * @desc : prints the stack
      * @params :
